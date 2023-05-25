@@ -1,248 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/beb121aa5f.js" crossorigin="anonymous"></script>
-    <title>Personal Portfolio</title>
-</head>
-<body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/alah.png" class="logo">
-                    <ul id="sidemenu">
-                        <li><a href="#header">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
-                    </ul>
-                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <p>UI/UX DESIGNER</p>
-                <h1> Hi, I am <span>Salah Abderraouf </span> </br>from Algeria<span style="color: red;">,</span></h1>               
-            </div>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-        </div>
-    </div>
-    <!-------------about------------------>
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/moi.jpg" >
-                </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About me</h1>
-                    <p>My name is Salah Abderraouf and I am a data enthusiast.<br>My skills also include the ability to architect, code using programming languages to
-                        build new tools and techniques to aid in managing and problem solving.</p>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.22.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.22.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.22.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.22.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.22.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.22.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.22.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.22.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.22.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.22.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links"             onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links"             onclick="opentab('education')">Education</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>                           
-                            <li>  <span> WEB/MOBILE DEVELOPMENT</span><br>Development Frontend/Backend.</li>
-                            <li>  <span>DATA ANALYSIS </span><br>
-                            Constantly looks for ways to cut costs while increasing profits.</li>
-                            <li><span> IT SUPPORT</span><br>
-                            monitoring and maintaining the company computer systems, installs, configuring hardware and software, and solving technical issues as they arise. </li>                           
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>                           
-                            <li>  <span> DATA ANALYST AT TEEMWORK COMPANY, 2021-TODAY</span><br>Manipulated multiple Types of Database Systems (SQL AND NO SQL).
-                                Provided professional technical support to clients and educated them on
-                                how to use the company's software programs and applications.
-                                Established the necessary documents, supports, and guidelines using Latex.
-                            </li>
-                            <li>  <span> MASTER's OFF-CYCLE INTERNSHIP AT SARL PHICRA ,ALGIERS 2020-2021</span><br>Designed and builded a laboratory management website system using Java Spring Boot, Mysql technologies
-                                in the back-end and JavaScript, Bootstrap, Html, Css in Front-END.</li>
-                            <li>  <span> VOLUNTEER INTERN AT THE FOOD COMPANY  AMORBENAMOR ,GUELMA 2019</span><br>Created a mobile application for managing QR codes on cans packaging using Android Studio.<br>
-                                Installed and configured hardware and software components.</li>                           
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>                           
-                            <li>  <span> MASTER'S DEGREE IN SOFTWARE ENGINEERING </span><br>University of Abderrahmane Mira ,Béjaia 2018-2021</li>
-                            <li>  <span> BACHELOR'S DEGREE IN COMPUTER INFORMATION SYSTEMS</span><br>University of Abderrahmane Mira ,Béjaia 2014-2017</li>                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
     </div>
-    <!-----------services-->
-    <div id="services">
-        <div class="container">
-            <div class="sub-title">My Services</div>
-                <div class="services-list">
-                        <div> 
-                            <i class="fa-solid fa-code"></i>
-                            <h2>Web/Mobile App Dev</h2>
-                            <p> it’s been a minute since your session. How are you feeling? If there’s anything we can help with, just reply in contact section and let us know.</p>
-                            <a href="#">Learn More</a>
-                        </div>
-                        <div> 
-                            <i class="fa-solid fa-chart-simple"></i>
-                            <h2>DATA ANALYSIS</h2>
-                            <p>No great marketing decisions have ever been made on qualitative data.</p>
-                            <a href="#">Learn More</a>
-                        </div>
-                        <div> 
-                            <i class="fa-solid fa-sliders"></i>
-                            <h2>IT SUPPORT</h2>
-                            <p>It’s not that we use technology, we live technology.</p>
-                            <a href="#">Learn More</a>
-                        </div>
-                </div>
-        </div>
-        <!------Portfolio---->
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-        <div id="portfolio">
-            <div class="container">
-                <h1 class="sub-title">My Work</h1>
-                <div class="work-list">
-                    <div class="work">
-                        <img src="images/y.jpg" alt="">
-                            <div class="layer">
-                               <h3 style="color: aliceblue;">Youtube video Downloader</h3> 
-                                    <p style="color: aliceblue;">Copy and past Desired Youtube video Link and download it for free</p>
-                                        <a href="https://salahabderraoufdownloader.onrender.com/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/bejtour.jpg" alt="">
-                        <div class="layer">
-                            <h3 style="color: aliceblue;">Toutists Guide App"Bejaia-tours"</h3> 
-                                 <p style="color: aliceblue;">discover the most beautifull places in Béjaia</p>
-                                    <a href="https://salahabderraouf.github.io/hebergement/templates/index.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <div class="work">
-                        <img src="images/data.jpg" alt="">
-                        <div class="layer">
-                            <h3 style="color: aliceblue;">Inventory Reports</h3> 
-                                 <p style="color: aliceblue;">CMR DRINKS && Inventory reports</p>
-                                     <a href="images/reports.pdf" download style="color: black;"><i class="fa-solid fa-arrow-up-right-from-square"></i>download</a>
-                         </div>
-                    </div>
-                </div>
-                <a href="https://github.com/salahabderraouf" class="btn">See more</a>
-            </div>
-    </div>
-    <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact me</h1>
-                        <p><i class="fa-sharp fa-solid fa-paper-plane"></i>raouf_salah@hotmail.com</p>
-                        <p><i class="fa-sharp fa-solid fa-phone"></i>+213 557358369</p>
-                        <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/abderraouf-salah-461a33177/"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://www.facebook.com/raouf.salahsalah.3"><i class="fa-brands fa-facebook"></i></a>
-                        </div>
-                        <a href="images/cv.pdf" download class="btn btn2">Download CV</a>
-                </div>
-                <div class="contact-right">
-                    <form>
-                        <input type="text" name="Name" placeholder="Type your name" id ="n" required>
-                        <input type="email" name="Email" placeholder="Type your email" id ="e" required>
-                        <textarea name="Message" rows="6" placeholder="Your message" id ="t" required></textarea>
-                        <button type="button" class="btn btn2" id="b" >Submit</button>
-                    </form> 
-                    <span id="msg">Contact me,</span>
-                </div>   
-            </div>
-        </div>
-        <div class="copyright">
-            <p>
-                Copyright <i class="fa-regular fa-copyright"></i>Salah Abderraouf 2023
-            </p>
-        </div>
-    </div>
     <script>
-        var tablinks=document.getElementsByClassName("tab-links");
-        var tabcontents=document.getElementsByClassName("tab-contents");
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-         
-        }
-    </script>
-    <script>
-        var sidemeu= document.getElementById("sidemenu");
-        function openmenu(){
-            sidemeu.style.right="0";
-        }
-        function closemenu(){
-            sidemeu.style.right="-200px";
-        }
-    </script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
-        import { getDatabase,ref,set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyD8gOvUkJgPNJEjGESV8oYyg6ExBBoMzp0",
-          authDomain: "portfolio-3f874.firebaseapp.com",
-          databaseURL: "https://portfolio-3f874-default-rtdb.firebaseio.com",
-          projectId: "portfolio-3f874",
-          storageBucket: "portfolio-3f874.appspot.com",
-          messagingSenderId: "1065321251435",
-          appId: "1:1065321251435:web:cb7f74c6fc8afa02fa272e",
-          measurementId: "G-3H8C3K9N1B"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const db=getDatabase(app);
-        const msg=document.getElementById("msg")
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        document.getElementById("b").addEventListener('click', function writeUserData(name,email,text) {
-                const db = getDatabase();
-                name=document.getElementById("n").value
-                email=document.getElementById("e").value
-                text=document.getElementById("t").value
-                
-                if(name!="" && email!="" && text!="" ){
-                set(ref(db, 'user'+name), {
-                    username: name,
-                    email: email,
-                    text:text
-        });
-        
-        window.alert("Thank you ,message sent succefully!");
-        setTimeout(function(){
-        msg.innerHTML=""} ,2000)
-        form.reset()
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
         }
-        else
-        {
-            window.alert("Type required data");
-        }
-    })
-      </script>
-</body>
+      });
+    </script>
+  </body>
 </html>
